@@ -1,0 +1,32 @@
+---
+
+- name: 'Install NPM'
+  apt:
+    name: 'npm'
+    state: 'present'
+    update_cache: yes
+
+- name: 'Clear npm cache'
+  shell:
+     "sudo npm cache clean -f"
+
+- name: 'Install n'
+  npm:
+    name: 'n'
+    global: yes
+    state: 'present'
+
+- name: 'Make n stable'
+  shell:
+     "sudo n stable"
+
+- name: 'Install AngularCLI'
+  npm:
+    name: '@angular/cli'
+    global: yes
+    state: 'present'
+
+- name: 'Update packages'
+  npm:
+    path: /opt/web-application-epam
+    state: 'latest'

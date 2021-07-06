@@ -1,0 +1,2 @@
+[hosts]
+AWS  ansible_host=52.14.58.57 ansible_user=ubuntu ansible_ssh_private_key_file=/home/arsen/awskey.pem
